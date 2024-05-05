@@ -14,20 +14,18 @@ from dotenv import load_dotenv
 
 config = os.path.join(os.getcwd(), "apikeys.env")
 print("config: ",config)
-load_dotenv(config)
+print(load_dotenv(config))
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 ELEVENLABS_API_KEY = os.getenv('ELEVENLABS_API_KEY')
 ELEVENLABS_VOICE_ID = os.getenv('ELEVENLABS_VOICE_ID')
 
-print("OPENAI_API_KEY=",OPENAI_API_KEY)
 image_folder= "frames"
+
 # Create the frames folder if it doesn't exist
 image_folder = os.path.join(os.getcwd(), image_folder)
 os.makedirs(image_folder, exist_ok=True)
-
 image_path= os.path.join(image_folder, "frame.jpg")
-print("image_path: ",image_path)
 
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
